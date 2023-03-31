@@ -9,7 +9,7 @@
 api=www.googleapis.com
 whitelist=.whitelist-apis
 blacklist=.blacklist-apis
-testfile='google:/Backups/GoogleDriveSpeedTest/500MB.bin'
+testfile='GDSA1:/appbackups/GoogleDriveSpeedTest/500MB.bin'
 
 #-------------------------#
 # Check if Binfile exists #
@@ -17,9 +17,9 @@ testfile='google:/Backups/GoogleDriveSpeedTest/500MB.bin'
 
 if [ ! -f /mnt/remote/Backups/GoogleDriveSpeedTest/500MB.bin ]; then
     echo "First run detected. Creating 500MB test file and uploading it to Google Drive."
-    mkdir /mnt/remote/Backups/GoogleDriveSpeedTest/
+    mkdir /mnt/remotes/appbackups/GoogleDriveSpeedTest/
     fallocate -l 500M /tmp/500MB.bin
-    mv /tmp/500MB.bin /mnt/remote/Backups/GoogleDriveSpeedTest/
+    mv /tmp/500MB.bin /mnt/remotes/appbackups/GoogleDriveSpeedTest/
     echo "Finished uploading to Google Drive."
 fi
 
