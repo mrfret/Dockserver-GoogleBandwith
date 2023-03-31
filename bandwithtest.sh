@@ -85,7 +85,7 @@ NC='\033[0m'
 # Checking each IP #
 #------------------#
 
-input=tmpapi/api-ips
+input=/tmp/tmpapi/api-ips
 while IFS= read -r ip; do
 	hostsline="$ip\t$api"
 	sudo -- sh -c -e "echo '$hostsline' >> /etc/hosts"
@@ -123,4 +123,4 @@ sudo -- sh -c -e "echo '$hostsline' >> /etc/hosts"
 # Cleanup tmp files #
 #-------------------#
 
-rm -r tmpapi
+rm -r /tmp/tmpapi
